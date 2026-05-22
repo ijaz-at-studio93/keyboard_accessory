@@ -73,6 +73,18 @@ class _KeyboardAccessoryHostState extends State<KeyboardAccessoryHost> {
       }
       _onFocusChanged();
     }
+    // Rebuild the overlay whenever any prop that affects the bar changes.
+    // focusNodes are already handled above via _onFocusChanged.
+    // Deferred to post-frame because didUpdateWidget fires during a build.
+    if (_overlayEntry != null &&
+        (oldWidget.actions != widget.actions ||
+            oldWidget.theme != widget.theme ||
+            oldWidget.barBuilder != widget.barBuilder ||
+            oldWidget.onDone != widget.onDone)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _overlayEntry?.markNeedsBuild();
+      });
+    }
   }
 
   @override
