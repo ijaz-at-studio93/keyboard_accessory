@@ -1,3 +1,7 @@
+## 0.1.2
+
+* **Docs:** Fixed demo GIF not rendering on pub.dev — use absolute raw GitHub URL.
+
 ## 0.1.1
 
 * **Fix:** `barBuilder` now receives a `BuildContext` as its first argument —
