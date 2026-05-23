@@ -251,7 +251,7 @@ class _CustomBarTabState extends State<_CustomBarTab> {
   Widget build(BuildContext context) {
     return KeyboardAccessoryHost(
       focusNodes: [_firstFocus, _lastFocus],
-      barBuilder: (ctx) {
+      barBuilder: (context, ctx) {
         if (!ctx.isVisible) return const SizedBox.shrink();
         final kbBottom = MediaQuery.viewInsetsOf(context).bottom;
         return AnimatedPositioned(

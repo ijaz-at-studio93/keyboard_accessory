@@ -2,6 +2,8 @@
 
 A floating glassmorphic keyboard accessory toolbar for Flutter. Wraps a form, tracks focus nodes, and shows a pill-shaped bar just above the keyboard with prev/next field navigation and a done button. Fully customisable — swap out the buttons, restyle the glass, or replace the entire bar.
 
+![keyboard_accessory demo](doc/demo.gif)
+
 ## Features
 
 - Floating glassmorphic pill bar that slides up/down with the keyboard
@@ -86,7 +88,7 @@ When you need a completely different look (solid colour, brand bar, etc.):
 ```dart
 KeyboardAccessoryHost(
   focusNodes: [firstFocus, lastFocus],
-  barBuilder: (ctx) {
+  barBuilder: (context, ctx) {
     if (!ctx.isVisible) return const SizedBox.shrink();
     return AnimatedPositioned(
       duration: const Duration(milliseconds: 150),

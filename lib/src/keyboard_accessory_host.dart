@@ -43,7 +43,8 @@ class KeyboardAccessoryHost extends StatefulWidget {
 
   final List<KeyboardAccessoryAction>? actions;
   final KeyboardAccessoryTheme? theme;
-  final Widget Function(KeyboardAccessoryBarContext ctx)? barBuilder;
+  final Widget Function(BuildContext context, KeyboardAccessoryBarContext ctx)?
+      barBuilder;
 
   @override
   State<KeyboardAccessoryHost> createState() => _KeyboardAccessoryHostState();
@@ -151,7 +152,7 @@ class _KeyboardAccessoryHostState extends State<KeyboardAccessoryHost> {
 
   Widget _buildOverlay(BuildContext context) {
     if (widget.barBuilder != null) {
-      return Stack(children: [widget.barBuilder!(_buildBarContext())]);
+      return Stack(children: [widget.barBuilder!(context, _buildBarContext())]);
     }
 
     final resolvedTheme = widget.theme ??
