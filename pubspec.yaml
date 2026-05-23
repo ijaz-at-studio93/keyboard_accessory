@@ -2,7 +2,7 @@ name: keyboard_accessory
 description: >-
   A floating glassmorphic keyboard accessory toolbar for Flutter with
   focus traversal, customisable actions, and full bar replacement.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/ijaz-at-studio93/keyboard_accessory
 repository: https://github.com/ijaz-at-studio93/keyboard_accessory
 
